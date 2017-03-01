@@ -6,6 +6,11 @@
 #include <stdint.h>
 
 
+
+/* APIs */
+
+
+
 struct nanotime {
   uint64_t ns;
 };
@@ -51,6 +56,36 @@ int64_t host_utc_sec_offset();
 /* returns how many chars were printed (not including the trailing '\0')     */
 /* may be less than `len` for cases where nanoseconds couldn't fit           */
 size_t nanotime_iso(const struct nanotime *nt, char *buf, const size_t len);
+
+
+
+/* Helper functions that do not exist in original implementation */
+
+
+
+static inline uint64_t nanotime_sec_val(struct nanotime nt) {
+  return nanotime_sec(&nt);
+}
+
+static inline uint64_t nanotime_usec_val(struct nanotime nt) {
+  return nanotime_usec(&nt);
+}
+
+static inline uint64_t nanotime_nsec_val(struct nanotime nt) {
+  return nanotime_nsec(&nt);
+}
+
+static inline uint64_t nanotime_now_sec() {
+  return nanotime_sec_val(nanotime_now());
+}
+
+static inline uint64_t nanotime_now_usec() {
+  return nanotime_usec_val(nanotime_now());
+}
+
+static inline uint64_t nanotime_now_nsec() {
+  return nanotime_nsec_val(nanotime_now());
+}
 
 
 
