@@ -1,3 +1,14 @@
+# Note on the fork
+
+I love this library, it is extremely good and fulfills its purpose perfectly.
+However, sometimes when using this library I do miss the benefit of
+[single file libs](https://github.com/nothings/single_file_libs): you can just
+copy a header file over, add an `include` line in the source file, and you are
+good to go. No modifications to the build system are needed. Hence I made this
+fork which converts the C version into a single library.
+
+I also took the liberty to add a few helper functions, which makes easy one-liners.
+
 # Nanotime
 
 ### nanosecond precision time
