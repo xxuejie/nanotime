@@ -12,7 +12,7 @@ LDFLAGS   := $(LDFLAGS) -lrt -lc
 endif
 
 
-SRCS      = src/nanotime.c
+SRCS      = 
 TESTS     = test_nanotime
 RUN_TESTS = ${patsubst %,run_%,$(TESTS)}
 
